@@ -1,6 +1,6 @@
+
 import Hero from "./components/hero";
 import Footer from "./components/footer";
-import AnimatedBackground from "./components/background";
 import About from "./components/about";
 
 export default function MainPage() {
