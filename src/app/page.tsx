@@ -8,7 +8,7 @@ export default function MainPage() {
         <div className=" items-center justify-center h-screen">
             {/* <AnimatedBackground> */}
             <div>
-                <div className="h-[calc(100vh-100px)]">
+                <div className="lg:h-[90vh] md:h-[90vh] h-screen">
                     <Hero />
                 </div>
                 <About />

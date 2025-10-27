@@ -99,9 +99,9 @@ const VelocityText = memo(({ children, baseVelocity, scrollContainerRef, classNa
 
     return (
         <div className={`${parallaxClassName} relative overflow-hidden`} style={parallaxStyle}>
-            <motion.div className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans text-lg font-medium tracking-[-0.02em] drop-shadow md:text-[5rem] md:leading-[5rem]`} style={{ x, ...scrollerStyle }}>
+            <motion.div className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans text-[3rem] font-medium tracking-[-0.02em] drop-shadow md:text-[5rem] md:leading-20`} style={{ x, ...scrollerStyle }}>
                 {Array.from({ length: numCopies }).map((_, i) => (
-                    <span className={`flex-shrink-0 ${className}`} key={i} ref={i === 0 ? copyRef : null}>
+                    <span className={`shrink-0 ${className}`} key={i} ref={i === 0 ? copyRef : null}>
                         {children}
                     </span>
                 ))}

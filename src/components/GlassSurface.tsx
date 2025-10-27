@@ -22,6 +22,18 @@ export interface GlassSurfaceProps {
     mixBlendMode?: "normal" | "multiply" | "screen" | "overlay" | "darken" | "lighten" | "color-dodge" | "color-burn" | "hard-light" | "soft-light" | "difference" | "exclusion" | "hue" | "saturation" | "color" | "luminosity" | "plus-darker" | "plus-lighter";
     className?: string;
     style?: React.CSSProperties;
+    /**
+     * Applied on fallback branches (non-SVG filter path), merged last for both light/dark.
+     */
+    fallbackStyle?: React.CSSProperties;
+    /**
+     * Applied only when fallback uses CSS backdrop-filter (supported).
+     */
+    fallbackWithBackdropStyle?: React.CSSProperties;
+    /**
+     * Applied only when fallback cannot use backdrop-filter and uses solid/glassy background.
+     */
+    fallbackNoBackdropStyle?: React.CSSProperties;
 }
 
 const useDarkMode = () => {
@@ -41,7 +53,7 @@ const useDarkMode = () => {
     return isDark;
 };
 
-const GlassSurface: React.FC<GlassSurfaceProps> = ({ children, width = 200, height = 80, borderRadius = 20, borderWidth = 0.07, brightness = 50, opacity = 0.93, blur = 11, displace = 0, backgroundOpacity = 0, saturation = 1, distortionScale = -180, redOffset = 0, greenOffset = 10, blueOffset = 20, xChannel = "R", yChannel = "G", mixBlendMode = "difference", className = "", style = {} }) => {
+const GlassSurface: React.FC<GlassSurfaceProps> = ({ children, width = 200, height = 80, borderRadius = 20, borderWidth = 0.07, brightness = 50, opacity = 0.93, blur = 11, displace = 0, backgroundOpacity = 0, saturation = 1, distortionScale = -180, redOffset = 0, greenOffset = 10, blueOffset = 20, xChannel = "R", yChannel = "G", mixBlendMode = "difference", className = "", style = {}, fallbackStyle, fallbackWithBackdropStyle, fallbackNoBackdropStyle }) => {
     const uniqueId = useId().replace(/:/g, "-");
     const filterId = `glass-filter-${uniqueId}`;
     const redGradId = `red-grad-${uniqueId}`;
@@ -207,6 +219,8 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({ children, width = 200, heig
                         border: "1px solid rgba(255, 255, 255, 0.2)",
                         boxShadow: `inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
                         inset 0 -1px 0 0 rgba(255, 255, 255, 0.1)`,
+                        ...(fallbackNoBackdropStyle || {}),
+                        ...(fallbackStyle || {}),
                     };
                 } else {
                     return {
@@ -217,6 +231,8 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({ children, width = 200, heig
                         border: "1px solid rgba(255, 255, 255, 0.2)",
                         boxShadow: `inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
                         inset 0 -1px 0 0 rgba(255, 255, 255, 0.1)`,
+                        ...(fallbackWithBackdropStyle || {}),
+                        ...(fallbackStyle || {}),
                     };
                 }
             } else {
@@ -227,6 +243,8 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({ children, width = 200, heig
                         border: "1px solid rgba(255, 255, 255, 0.3)",
                         boxShadow: `inset 0 1px 0 0 rgba(255, 255, 255, 0.5),
                         inset 0 -1px 0 0 rgba(255, 255, 255, 0.3)`,
+                        ...(fallbackNoBackdropStyle || {}),
+                        ...(fallbackStyle || {}),
                     };
                 } else {
                     return {
@@ -239,6 +257,8 @@ const GlassSurface: React.FC<GlassSurfaceProps> = ({ children, width = 200, heig
                         0 2px 16px 0 rgba(31, 38, 135, 0.1),
                         inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
                         inset 0 -1px 0 0 rgba(255, 255, 255, 0.2)`,
+                        ...(fallbackWithBackdropStyle || {}),
+                        ...(fallbackStyle || {}),
                     };
                 }
             }
