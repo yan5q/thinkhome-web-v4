@@ -24,10 +24,10 @@ export default function CommandMenu({ open, setOpen }: CommandMenuProps) {
                     <CommandItem className="text-xl font-mono lowercase rounded-2xl mt-1" onSelect={() => navigateTo("/")}>
                         Domů
                     </CommandItem>
-                    <CommandItem className="text-xl font-mono lowercase rounded-2xl" onSelect={() => navigateTo("/sluzby")}>
+                    <CommandItem disabled className="text-xl font-mono lowercase rounded-2xl" onSelect={() => navigateTo("/sluzby")}>
                         Služby
                     </CommandItem>
-                    <CommandItem className="text-xl font-mono lowercase rounded-2xl" onSelect={() => navigateTo("/o-nas")}>
+                    <CommandItem disabled className="text-xl font-mono lowercase rounded-2xl" onSelect={() => navigateTo("/o-nas")}>
                         O nás
                     </CommandItem>
                     <CommandItem className="text-xl font-mono lowercase rounded-2xl mb-1" onSelect={() => navigateTo("/kontakt")}>
