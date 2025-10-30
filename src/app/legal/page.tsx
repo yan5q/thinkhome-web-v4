@@ -5,8 +5,6 @@ const LegalContent = () => {
         <div className="max-w-4xl mx-auto py-16 mt-[10vh]">
             <h1 className="text-3xl font-bold mb-6">Právní informace a povinné údaje</h1>
 
-            <p className="text-sm text-black/60 mb-8">Tato stránka obsahuje zákonem vyžadované informace pro web společnosti s ručením omezeným v České republice a související zásady. Vyplňte prosím označené údaje dle skutečnosti.</p>
-
             <h2 className="text-2xl font-semibold mb-3">Identifikace společnosti</h2>
             <div className="space-y-1">
                 <p>

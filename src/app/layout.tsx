@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -34,6 +37,8 @@ export default function RootLayout({
             <body className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable} antialiased`}>
                 <Navbar />
                 {children}
+                <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
