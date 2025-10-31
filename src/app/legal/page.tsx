@@ -2,7 +2,7 @@ import React from "react";
 
 const LegalContent = () => {
     return (
-        <div className="max-w-4xl mx-auto py-16 mt-[10vh]">
+        <div className="max-w-4xl mx-6 md:mx-12 lg:mx-auto py-16 mt-[10vh]">
             <h1 className="text-3xl font-bold mb-6">Právní informace a povinné údaje</h1>
 
             <h2 className="text-2xl font-semibold mb-3">Identifikace společnosti</h2>
