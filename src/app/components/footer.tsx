@@ -15,6 +15,7 @@ export default function Footer() {
                         {/* <AuroraText colors={["#7928CA", "#0070F3", "#38bdf8"]}>Think</AuroraText> */}
                         ThinkHome s.r.o.
                     </h2>
+                    <h3 className="text-sm text-center text-muted-foreground">IČO: 23893591</h3>
                 </Link>
                 <div className="my-3 flex flex-wrap justify-center gap-6 text-sm">
                     {links.map((link) => (

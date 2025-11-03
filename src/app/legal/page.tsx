@@ -13,21 +13,15 @@ const LegalContent = () => {
                 <p>
                     <span className="font-semibold">Sídlo:</span> Rytířova 777/3, Praha 12, 143 00
                 </p>
-                {/* <p>
-                    <span className="font-semibold">IČO:</span> [XXXXXXXX]
+                <p>
+                    <span className="font-semibold">IČO:</span> 23893591
                 </p>
                 <p>
-                    <span className="font-semibold">DIČ:</span> [CZXXXXXXXX] (vyplňte, pokud jste plátci DPH)
+                    <span className="font-semibold">Spisová značka:</span> C 434666/MSPH Městský soud v Praze
                 </p>
                 <p>
-                    <span className="font-semibold">Zápis v OR:</span> zapsáno v obchodním rejstříku vedeném [Městský/Krajský] soud v [Praze/Brně/…], spisová značka [C/oddíl + číslo]
+                    <span className="font-semibold">ID datové schránky:</span> hujt7i5
                 </p>
-                <p>
-                    <span className="font-semibold">Statutární orgán:</span> [Jméno a příjmení jednatele/jednatelů] (nepovinné, doporučeno)
-                </p>
-                <p>
-                    <span className="font-semibold">ID datové schránky:</span> [XXXXXXXX] (nepovinné)
-                </p> */}
             </div>
 
             <h2 className="text-2xl font-semibold mt-8 mb-3">Kontaktní údaje</h2>
@@ -72,7 +66,7 @@ const LegalContent = () => {
             <h2 className="text-2xl font-semibold mt-10 mb-3">Zásady zpracování osobních údajů (GDPR)</h2>
             <div className="space-y-3">
                 <p>
-                    <span className="font-semibold">Správce:</span> ThinkHome s.r.o.{/*, IČO [XXXXXXXX]*/}, se sídlem Rytířova 777/3, Praha 12, 143 00. Kontaktní e‑mail: privacy@thinkhome.org
+                    <span className="font-semibold">Správce:</span> ThinkHome s.r.o., se sídlem Rytířova 777/3, Praha 12, 143 00. Kontaktní e‑mail: privacy@thinkhome.org
                 </p>
                 <p>
                     <span className="font-semibold">Účely a právní základ:</span>
